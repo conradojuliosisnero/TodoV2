@@ -1,10 +1,9 @@
-// import Nav from "../components/Nav/Nav";
+import LayoutComponent from '../../Layout/Layout'
 
 export default function Dashboard() {
   return (
-    <>
-      {/* <Nav /> */}
+    <LayoutComponent>
       (Private - permision )
-    </>
+    </LayoutComponent>
   );
 }
