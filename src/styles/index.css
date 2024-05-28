@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
     .wrapper{
-        @apply bg-slate-100 w-96 flex-wrap flex-col h-72 grid place-content-center rounded-lg 
+        @apply bg-sky-100 w-[350px] flex-wrap flex-col h-[350px] grid place-content-center rounded-lg 
         border-2 
     }
-}
+} */
