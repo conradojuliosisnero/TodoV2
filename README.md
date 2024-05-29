@@ -17,10 +17,6 @@ Todo App V2 es una aplicación de gestión de tareas que permite a los usuarios 
  - JavaScript
  - TailwindCss
  - FramerMotion
-  - MongoDB
-
-### Backend
- - MongoDB
 
 
 ### Frontend
@@ -58,24 +54,6 @@ Todo App V2 es una aplicación de gestión de tareas que permite a los usuarios 
     ```
 
 5. Abre `index.html` en tu navegador para acceder a la interfaz de usuario.
-
-## Uso
-
-### Registro de Usuario
-
-1. Abre la aplicación en tu navegador.
-2. En la sección de "Register", ingresa un nombre de usuario y una contraseña.
-3. Haz clic en "Register".
-
-### Inicio de Sesión
-
-1. En la sección de "Login", ingresa tu nombre de usuario y contraseña.
-2. Haz clic en "Login". Si las credenciales son correctas, recibirás un token que se almacenará en el `localStorage`.
-
-### Acceso a Rutas Protegidas
-
-1. Después de iniciar sesión, puedes acceder a rutas protegidas como la gestión de tareas.
-2. Haz clic en "Access Protected Route" para ver un mensaje de una ruta protegida.
 
 ## Futuras Mejoras
 
