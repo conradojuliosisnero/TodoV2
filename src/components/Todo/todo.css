@@ -1,0 +1,8 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 90px 1fr;
+  grid-template-areas:
+    "dashboard filter filter"
+    "dashboard main main";
+}

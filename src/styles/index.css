@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
-    .wrapper{
-        @apply bg-sky-100 w-[350px] flex-wrap flex-col h-[350px] grid place-content-center rounded-lg 
-        border-2 
+@layer components {
+    .todo-wrapper{
+        @apply  bg-slate-50 p-4 
     }
-} */
+}
