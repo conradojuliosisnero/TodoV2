@@ -4,7 +4,7 @@ import Task from "../Task/Task";
 function Wrapper({ wrapper }) {
   return (
     <div
-      className={`bg-gray-700 p-4 flex flex-col items-center w-full rounded-lg mb-3`}
+      className={`${wrapper.bg} text-gray-600 border-2 ${wrapper.borderColor} dark:${wrapper.darkMode} dark:text-white p-4 flex flex-col items-center w-full rounded-lg mb-3`}
     >
       <div className="flex w-full place-content-start">
         <span
@@ -23,6 +23,7 @@ Wrapper.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     bg: PropTypes.string.isRequired,
+    darkMode: PropTypes.string.isRequired,
     textColor: PropTypes.string.isRequired,
     borderColor: PropTypes.string.isRequired,
   }).isRequired,

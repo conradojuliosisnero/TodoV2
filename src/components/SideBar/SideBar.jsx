@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import home from "../../assets/icon-home.svg";
 import profile from "../../assets/use-icon.svg";
 import iconsettings from "../../assets/icon-settings.svg";
+import DarkModeToggle from "../Nav/ToggleDarkMode";
 
 export default function SideBar() {
   return (
@@ -37,6 +38,8 @@ export default function SideBar() {
           <img src={home} alt="icon-home" />
           <small className="text-xs font-medium">Home</small>
         </Link>
+
+        <DarkModeToggle/>
       </nav>
     </div>
   );
