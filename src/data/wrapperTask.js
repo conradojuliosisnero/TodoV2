@@ -1,17 +1,23 @@
 export const WRAPPER = [
   {
     id: 1,
-    name: "New Todo",
-    bg:'bg-green-500'
+    name: "New",
+    bg: "bg-green-500/30",
+    textColor: "text-green-500",
+    borderColor: "border-green-500",
   },
   {
     id: 2,
     name: "Progress",
-    bg:'bg-orange-500'
+    bg: "bg-orange-500/30",
+    textColor: "text-orange-500",
+    borderColor: "border-orange-500",
   },
   {
     id: 3,
     name: "Done",
-    bg:'bg-violet-500'
+    bg: "bg-violet-500/30",
+    textColor: "text-violet-500",
+    borderColor: "border-violet-500",
   },
 ];

@@ -35,8 +35,13 @@ export default function HeaderNav() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link href="/" color="foreground">
+            Home
+          </Link>
+        </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/" aria-current="page">
+          <Link href="/dashboard" aria-current="page">
             Task
           </Link>
         </NavbarItem>

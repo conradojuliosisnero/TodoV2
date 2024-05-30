@@ -1,6 +1,9 @@
 export default function Task() {
   return (
-    <ul className="flex flex-wrap gap-2 p-4">
+    <ul className="bg-gray-800 grid gap-4 p-4 mt-2 w-full">
+      <li className="font-semibold">task</li>
+      <li className="font-semibold">task</li>
+      <li className="font-semibold">task</li>
       <li className="font-semibold">task</li>
     </ul>
   );
