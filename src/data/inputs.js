@@ -21,3 +21,21 @@ export const INPUTS = [
     type: "password",
   },
 ];
+
+export const FOOTERDATA = [
+  {
+    id: 1,
+    name: "",
+    path: "",
+  },
+  {
+    id: 2,
+    name: "",
+    path: "",
+  },
+  {
+    id: 3,
+    name: "",
+    path: "",
+  },
+];
