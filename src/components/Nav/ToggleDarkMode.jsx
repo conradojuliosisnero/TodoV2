@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return "dark"
+    } else {
+      return "ligth"
+    }
+  });
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
+    if (darkMode === "dark") {
+      document.querySelector('html').classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.querySelector("html").classList.remove("dark");
     }
   }, [darkMode]);
 
   const handleToggle = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevTheme) => (prevTheme === "ligth" ? "dark" : "ligth"));
   };
 
   return (
@@ -30,7 +36,7 @@ const DarkModeToggle = () => {
           <div className="block border-[1px] dark:border-white border-gray-900 w-14 h-8 rounded-full"></div>
           <div
             className={`dot absolute left-1 top-1 dark:bg-white bg-gray-800 w-6 h-6 rounded-full transition transform ${
-              darkMode ? "translate-x-full" : ""
+              darkMode === "dark" ? "translate-x-full" : ""
             }`}
           ></div>
         </div>

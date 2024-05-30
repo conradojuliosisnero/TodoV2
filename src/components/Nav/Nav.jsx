@@ -16,7 +16,10 @@ import DarkModeToggle from "./ToggleDarkMode";
 export default function HeaderNav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Activity", "Help & Feedback"];
+  const menuItems = [
+    { name: "Task" , path: '/'},
+    { name: "About" , path: '/about'},
+  ];
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -33,12 +36,12 @@ export default function HeaderNav() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+          <Link href="/" aria-current="page">
             Task
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/about">
             About
           </Link>
         </NavbarItem>
@@ -77,10 +80,10 @@ export default function HeaderNav() {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item.path}
               size="lg"
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
