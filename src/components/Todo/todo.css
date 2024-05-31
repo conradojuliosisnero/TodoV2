@@ -6,3 +6,9 @@
     "dashboard filter filter"
     "dashboard main main";
 }
+
+/* @media screen and (max-width: 640px){
+    .gridContainer{
+      grid-template-columns:1fr;
+    }
+} */
