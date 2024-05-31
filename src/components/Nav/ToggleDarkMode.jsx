@@ -22,7 +22,7 @@ const DarkModeToggle = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between toggle mx-5">
+    <div className="flex flex-row justify-between toggle">
       <label htmlFor="dark-toggle" className="flex items-center cursor-pointer">
         <div className="relative">
           <input
