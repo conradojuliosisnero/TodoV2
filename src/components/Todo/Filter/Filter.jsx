@@ -1,18 +1,28 @@
+import { useState } from "react";
+
 const Filter = () => {
+  const [todoSearch, setTodoSearch] = useState("");
+  function getTodo(event) {
+    setTodoSearch(event.target.value);
+  }
+
   return (
-    <div className="[grid-area:filter] rounded-lg dark:bg-gray-700 pr-3 mr-3 mt-3 flex place-content-center border-2 dark:border-slate-800">
+    <div className="[grid-area:filter] flex-wrap rounded-lg dark:bg-gray-700 border-2 dark:border-slate-800 mx-3 mt-3">
       {/* INPUT SEARCH  */}
-      <div className="w-full flex flex-grow justify-start items-center px-4 py-3">
+      <div className="flex-wrap sm:w-full sm:flex-nowrap flex flex-grow md:justify-start items-center px-4 py-3 w-full">
         <input
           type="text"
+          value={todoSearch}
+          onChange={getTodo}
           name="search"
+          autoComplete="off"
           placeholder="Search Task..."
-          className="h-10 border-none rounded-lg p-3 outline-none bg-slate-200 dark:bg-slate-800 text-white"
+          className=" h-10 flex border-none rounded-lg p-3 outline-none bg-slate-200 dark:bg-slate-800 dark:text-white"
         />
         {/* SEARCH ICON  */}
-        <div className="mx-2 px-2 flex justify-center items-center">
+        <div className="ml-4 flex justify-around items-center">
           <svg
-            className="w-[30px] h-[30px] cursor-pointer stroke-slate-500 hover:stroke-slate-400 transition-200"
+            className="w-5 h-5 cursor-pointer stroke-slate-500 hover:stroke-slate-400 transition-200"
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -25,9 +35,9 @@ const Filter = () => {
           </svg>
         </div>
         {/* FILTER ICON  */}
-        <div className="mx-3 p-3 flex justify-center items-center">
+        <div className="ml-3  p-3 flex justify-end items-center sm:justify-start">
           <svg
-            className="w-[40px] h-[40px] cursor-pointer stroke-slate-500 hover:stroke-slate-400 transition-200"
+            className="w-7 h-7 sm:w-[40px] h-[40px] cursor-pointer stroke-slate-500 hover:stroke-slate-400 transition-200"
             viewBox="0 0 24 24"
             fill="none"
           >
@@ -53,7 +63,8 @@ const Filter = () => {
         </div>
       </div>
       {/* FILTER TAGS  */}
-      <div className="w-full text-gray-500 flex items-center justify-start px-3 font-semibold">
+      <div className=" mb-2 text-gray-500 flex items-center justify-start px-3 font-semibold">
+        {/* TAG ELEMENT  */}
         <div className="flex hover:bg-slate-300/30 dark:hover:bg-slate-400/30 cursor-pointer border-2 dark:border-slate-600 rounded-lg px-2">
           <span className="mr-3">Tag</span>
           {/* icon delete tag  */}

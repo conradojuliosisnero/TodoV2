@@ -1,5 +1,13 @@
 import PropTypes from "prop-types";
 import Task from "../Task/Task";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+} from "@nextui-org/react";
+
 
 function Wrapper({ wrapper }) {
   return (
@@ -18,46 +26,54 @@ function Wrapper({ wrapper }) {
       {/* TASK VIEWS  */}
       <Task />
       {/* ADD ITEMS  */}
-      <div className="flex py-2 place-content-start w-full h-8 left-2 bottom-2 hover:bg-slate-100 dark:bg-slate-700 rounded-lg dark:hover:bg-slate-600 transition cursor-pointer place-items-center">
+      <div className="flex py-2 place-content-start w-full h-8 left-2 bottom-2 place-items-center">
         {/* ADD ICONS */}
-        <svg
-          className="w-full h-full stroke-slate-500 dark:stroke-slate-400"
-          viewBox="0 0 24 24"
-        >
-          <title />
 
-          <g id="Complete">
-            <g data-name="add" id="add-2">
-              <g>
-                <line
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  x1="12"
-                  x2="12"
-                  y1="19"
-                  y2="5"
-                />
+        <Dropdown className="bg-slate-700 w-full">
+          <DropdownTrigger>
+            <Button variant="ligth" className='w-full flex justify-start'>
+              <svg
+                className="w-[40px] h-[40px] stroke-slate-500 dark:stroke-slate-400"
+                viewBox="0 0 24 24"
+              >
+                <title />
 
-                <line
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  x1="5"
-                  x2="19"
-                  y1="12"
-                  y2="12"
-                />
-              </g>
-            </g>
-          </g>
-        </svg>
-        {/* title add  */}
-        {/* <span className="flex font-normal w-full flex-grow dark:text-slate-400">
-          Add Items
-        </span> */}
+                <g id="Complete">
+                  <g data-name="add" id="add-2">
+                    <g>
+                      <line
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        x1="12"
+                        x2="12"
+                        y1="19"
+                        y2="5"
+                      />
+
+                      <line
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        x1="5"
+                        x2="19"
+                        y1="12"
+                        y2="12"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Static Actions">
+            <DropdownItem key="new" className="">
+              Add Task
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </div>
     </div>
   );
