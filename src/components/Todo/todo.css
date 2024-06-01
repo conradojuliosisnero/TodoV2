@@ -1,14 +1,18 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  grid-template-rows: 90px 1fr;
   grid-template-areas:
-    "dashboard filter filter"
-    "dashboard main main";
+    "nav"
+    "filter"
+    "main";
+  grid-template-columns: 1fr;
 }
 
-/* @media screen and (max-width: 640px){
-    .gridContainer{
-      grid-template-columns:1fr;
-    }
-} */
+@media (min-width: 640px) {
+  .gridContainer {
+    grid-template-areas:
+      "dashboard filter"
+      "dashboard main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+  }
+}

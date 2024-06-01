@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 
 const DarkModeToggle = () => {
+  // Lee el estado inicial desde localStorage o usa el valor predeterminado basado en la preferencia del sistema.
   const [darkMode, setDarkMode] = useState(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return "dark"
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode) {
+      return savedMode;
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
     } else {
-      return "ligth"
+      return "light";
     }
   });
 
   useEffect(() => {
+    // Actualiza la clase del HTML y guarda el estado en localStorage.
     if (darkMode === "dark") {
-      document.querySelector('html').classList.add("dark");
+      document.querySelector("html").classList.add("dark");
     } else {
       document.querySelector("html").classList.remove("dark");
     }
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   const handleToggle = () => {
-    setDarkMode((prevTheme) => (prevTheme === "ligth" ? "dark" : "ligth"));
+    setDarkMode((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
@@ -30,7 +36,7 @@ const DarkModeToggle = () => {
             name="dark-mode"
             id="dark-toggle"
             className="checkbox hidden"
-            checked={darkMode}
+            checked={darkMode === "dark"}
             onChange={handleToggle}
           />
           <div className="block border-[1px] dark:border-white border-gray-900 w-14 h-8 rounded-full"></div>
