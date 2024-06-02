@@ -39,9 +39,9 @@ const DarkModeToggle = () => {
             checked={darkMode === "dark"}
             onChange={handleToggle}
           />
-          <div className="block border-[1px] dark:border-white border-gray-900 w-14 h-8 rounded-full"></div>
+          <div className="block border-[1px] dark:border-white border-gray-500 w-14 h-8 rounded-full"></div>
           <div
-            className={`dot absolute left-1 top-1 dark:bg-white bg-gray-800 w-6 h-6 rounded-full transition transform ${
+            className={`dot absolute left-1 top-1 dark:bg-white bg-gray-500 w-6 h-6 rounded-full transition transform ${
               darkMode === "dark" ? "translate-x-full" : ""
             }`}
           ></div>
