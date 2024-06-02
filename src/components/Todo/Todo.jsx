@@ -1,7 +1,6 @@
 import "./todo.css";
 import { WRAPPER } from "../../data/wrapperTask";
 import Wrapper from "./WrapperTask/Wrapper";
-import SideBar from "../SideBar/SideBar";
 import Filter from "./Filter/Filter";
 import Nav from "../Nav/Nav";
 
