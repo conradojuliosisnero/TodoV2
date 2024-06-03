@@ -47,8 +47,12 @@ const Login = () => {
         </form>
 
         <div className="w-full mb-12 flex justify-center flex-col items-center">
-          <span className="font-semibold text-gray-500 dark:text-white">Not Register?</span>
-          <Link to="/register" className="hover:underline">Register</Link>
+          <span className="font-semibold text-gray-500 dark:text-white">
+            are you not registered?
+          </span>
+          <Link to="/register" className="hover:underline">
+            Register
+          </Link>
         </div>
       </div>
     </div>

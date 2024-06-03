@@ -11,7 +11,7 @@ const Login = () => {
             Welcome To App
           </h1>
           <p className="text-gray-500 dark:text-white mt-4">
-            Enter your credentials for register
+            {"let's register"}
           </p>
         </div>
 
@@ -57,7 +57,11 @@ const Login = () => {
 
           {/* BUTTON LOGIN  */}
           <div className="w-full flex my-3 justify-center items-center">
-            <Button variant="ghost" color="default">
+            <Button
+              variant="ghost"
+              color="default"
+              className="w-full dark:text-white"
+            >
               Register
             </Button>
           </div>
