@@ -6,39 +6,35 @@ export default function Help() {
           <h1 className="text-2xl font-bold">About App</h1>
         </div>
         <div className="flex mx-8 p-6 flex-wrap">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-            necessitatibus repellat, quos et deserunt, odio explicabo facilis
-            dicta consequuntur possimus harum tempore voluptas maiores eligendi.
-            Enim mollitia voluptas excepturi laudantium.
-            <br />
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
-            voluptate laboriosam ducimus porro aperiam temporibus exercitationem
-            eaque, unde beatae maxime neque debitis cum recusandae commodi.
-            Recusandae doloribus dolor nostrum sapiente.
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-            necessitatibus repellat, quos et deserunt, odio explicabo facilis
-            dicta consequuntur possimus harum tempore voluptas maiores eligendi.
-            Enim mollitia voluptas excepturi laudantium.
-            <br />
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
-            voluptate laboriosam ducimus porro aperiam temporibus exercitationem
-            eaque, unde beatae maxime neque debitis cum recusandae commodi.
-            Recusandae doloribus dolor nostrum sapiente.
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
-            necessitatibus repellat, quos et deserunt, odio explicabo facilis
-            dicta consequuntur possimus harum tempore voluptas maiores eligendi.
-            Enim mollitia voluptas excepturi laudantium.
-            <br />
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae
-            voluptate laboriosam ducimus porro aperiam temporibus exercitationem
-            eaque, unde beatae maxime neque debitis cum recusandae commodi.
-            Recusandae doloribus dolor nostrum sapiente.
-          </p>
+          <ol className="list-decimal">
+            <li>
+              <strong>Registro y Configuración Inicial:</strong> Descarga Todo
+              App y crea una cuenta. Personaliza tu perfil y ajusta las
+              configuraciones iniciales.
+            </li>
+            <li>
+              <strong>Creación de Tareas:</strong> Añade nuevas tareas con
+              descripciones detalladas, fechas límite y etiquetas.
+            </li>
+            <li>
+              <strong>Organización de Listas: </strong>Organiza tus tareas en
+              listas y proyectos para una mejor gestión
+            </li>
+            <li>
+              <strong>Configuración de Recordatorios:</strong> Añade
+              recordatorios y recibe notificaciones para no olvidar nada
+              importante.
+            </li>
+            <li>
+              <strong>Colaboración:</strong> Invita a compañeros de equipo o
+              familiares para colaborar en listas y proyectos compartidos.
+            </li>
+            <li>
+              <strong>Seguimiento y Cumplimiento:</strong> Marca las tareas como
+              completadas y sigue tu progreso a través de informes y
+              estadísticas.
+            </li>
+          </ol>
         </div>
       </section>
     </div>

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 import { UserIcon } from "../pages/Settings/User";
 import { Link } from "react-router-dom";
+import '../pages/Settings/styles.css'
 
 
 export default function LayoutConfig() {
@@ -13,9 +14,9 @@ export default function LayoutConfig() {
         {/* MENU SEETINGS  */}
         <aside className="order-2 sm:[grid-area: aside] sm:border-r-1 border-gray-400 sm:row-span-3 sm:flex sm:items-center justify-center p-3 border-t-1 sm:border-t-0">
           {/* OPTIONE SETTINGS  */}
-          <ul className="flex flex-col">
+          <ul className="flex flex-col items-center">
             <li className="cursor-pointer mb-8 transition-colors dark:hover:text-blue-500 text-gray-500 dark:text-white">
-              <Link to="/settings">Config Theme</Link>
+              <Link to="/settings" className="text-blue-500">Config Theme Info</Link>
             </li>
             <li className="mb-8 transition-colors dark:hover:text-blue-500 text-gray-500 dark:text-white">
               <Link to="/settings/theme">Config Theme</Link>
@@ -26,7 +27,7 @@ export default function LayoutConfig() {
                 variant="bordered"
                 startContent={<UserIcon />}
               >
-                Delete Acount
+                Delete Account
               </Button>
             </li>
           </ul>

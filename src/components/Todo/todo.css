@@ -1,7 +1,7 @@
 .gridContainer {
   display: grid;
   grid-template-areas:
-    "nav"
+    "dashboard"
     "filter"
     "main";
   grid-template-columns: 1fr;
@@ -13,6 +13,6 @@
       "dashboard filter"
       "dashboard main";
     grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 180px 1fr 1fr;
   }
 }

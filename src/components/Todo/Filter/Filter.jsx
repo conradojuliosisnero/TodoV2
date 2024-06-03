@@ -7,7 +7,7 @@ const Filter = () => {
   }
 
   return (
-    <div className="[grid-area:filter] flex-wrap rounded-lg dark:bg-gray-700 border-2 dark:border-slate-800 mx-3 mt-3">
+    <div className="[grid-area:filter] sm:col-span-2 flex-wrap rounded-lg dark:bg-gray-700 border-2 dark:border-slate-800 mx-3 mt-3">
       {/* INPUT SEARCH  */}
       <div className="flex-wrap sm:w-full sm:flex-nowrap flex flex-grow md:justify-start items-center px-4 py-3 w-full">
         <input
