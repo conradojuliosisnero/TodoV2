@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Help from "./pages/help/Help";
 import Index from "./pages/Index";
 import Layout from "./Layout/Layout.jsx";
@@ -9,12 +9,13 @@ import Register from "./pages/Register/Register.jsx";
 import LayoutConfig from "./Layout/SettingLayout.jsx";
 import ThemeConfig from "./components/ThemeConfig/ThemeConfig.jsx";
 import InfoConfig from "./components/ThemeConfig/InfoConfig.jsx";
+import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<ProtectedRoute />} />
         <Route path="/settings" element={<LayoutConfig />}>
           <Route path="/settings" element={<InfoConfig />} />
           <Route path="/settings/theme" element={<ThemeConfig />}></Route>
