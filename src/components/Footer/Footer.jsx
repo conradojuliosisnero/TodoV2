@@ -8,7 +8,7 @@ export default function Footer() {
         <li className="my-3 text-gray-400 dark:text-white mx-3 cursor-pointer">
           <Link to="https://github.com/conradojuliosisnero">
             <svg
-              className="w-7 h-7 fill-gray-700 dark:fill-white"
+              className="w-7 h-7 fill-gray-700 hover:fill-black dark:fill-white hover:dark:fill-gray-400 transition-all"
               viewBox="0 0 20 20"
               version="1.1"
             >
@@ -32,7 +32,7 @@ export default function Footer() {
         <li className="my-3 text-gray-400 dark:text-white mx-3 cursor-pointer">
           <Link to="https://www.linkedin.com/in/julio-conrado-358b09242/">
             <svg
-              className="w-8 h-8 fill-gray-700 dark:fill-white"
+              className="w-8 h-8 fill-gray-700 hover:fill-black dark:fill-white hover:dark:fill-gray-400 transition-all"
               viewBox="0 0 16 16"
             >
               <path d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z" />

@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./styles.css";
 import { Button } from "@nextui-org/react";
 import { UserIcon } from "./User";

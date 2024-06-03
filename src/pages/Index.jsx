@@ -6,7 +6,7 @@ function Index() {
         {/* TITLE SITE */}
         <div className="container mx-auto px-4 flex ">
           <h1 className="text-gray-500 flex-grow dark:text-white text-5xl font-semibold text-center md:text-start sm:w-1/2 md:p-5">
-            Streamline Your Productivity with Our Task Management App
+            Bienvenido a Todo App
           </h1>
           <div className="hidden sm:flex mx-4 my-4 justify-center items-center md:w-1/2">
             <svg
@@ -26,10 +26,11 @@ function Index() {
         {/* TEXT */}
         <div className="container mx-auto px-4 pt-3">
           <p className="dark:text-white text-gray-400 text-center md:text-start md:w-1/2 md:p-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            aspernatur, eum fuga odio, doloribus sunt laudantium inventore, in
-            mollitia velit alias voluptatem autem quas quae illum labore aliquid
-            ipsam. Nemo.
+            ¡Organiza tu vida con Todo App! Nuestra aplicación te permite
+            gestionar tus tareas diarias de manera eficiente, ayudándote a
+            mantenerte enfocado y productivo. Con una interfaz intuitiva y
+            funcionalidades avanzadas, Todo App es la herramienta perfecta para
+            mejorar tu gestión del tiempo.
           </p>
         </div>
       </header>
@@ -56,14 +57,14 @@ function Index() {
           {/* TITTLE CARD  */}
           <div className="w-full flex justify-start my-5">
             <span className="font-bold text-lg text-black dark:text-white">
-              LEYEND
+              Gestión de Tareas
             </span>
           </div>
           {/* TEXT CARD  */}
           <p className=" text-gray-500 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            enim accusamus debitis deleniti, fugit ratione fugiat vitae,
-            dignissimos{" "}
+            Mantén tus tareas organizadas y accesibles en un solo lugar. Crea,
+            edita y categoriza tus actividades diarias para maximizar tu
+            productividad y no perder de vista ninguna tarea importante.
           </p>
         </div>
         {/* TARGETS  */}
@@ -89,14 +90,14 @@ function Index() {
           {/* TITTLE CARD  */}
           <div className="w-full flex justify-start my-5">
             <span className="font-bold text-lg text-black dark:text-white">
-              LEYEND
+              Colaboración en Equipo
             </span>
           </div>
           {/* TEXT CARD  */}
           <p className=" text-gray-500 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            enim accusamus debitis deleniti, fugit ratione fugiat vitae,
-            dignissimos{" "}
+            Trabaja de manera más eficiente con tu equipo. Comparte listas,
+            asigna tareas y mantén una comunicación fluida para asegurar que
+            todos estén en sintonía y trabajando hacia los mismos objetivos.
           </p>
         </div>
 
@@ -133,14 +134,14 @@ function Index() {
           {/* TITTLE CARD  */}
           <div className="w-full flex justify-start my-5">
             <span className="font-bold text-lg text-black dark:text-white">
-              LEYEND
+              Estadísticas y Seguimiento
             </span>
           </div>
           {/* TEXT CARD  */}
           <p className=" text-gray-500 dark:text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            enim accusamus debitis deleniti, fugit ratione fugiat vitae,
-            dignissimos{" "}
+            Visualiza tu progreso con reportes detallados y estadísticas.
+            Analiza tu rendimiento, identifica áreas de mejora y celebra tus
+            logros a medida que completas tus tareas y proyectos.
           </p>
         </div>
       </main>
