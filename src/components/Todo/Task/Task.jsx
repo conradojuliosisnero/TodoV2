@@ -11,7 +11,7 @@ export default function Task() {
   return (
     <ul className="overflow-y-scroll dark:custom-scroll dark:bg-transparent gap-4 p-4 mt-2 w-full flex-grow mb-4">
       {/* TASK  */}
-      <li className="dark:bg-slate-600 font-normal w-full h-12 rounded-lg flex justify-start p-2 items-center mb-2 cursor-pointer">
+      <li className="dark:bg-slate-600 font-normal w-full h-12 rounded-lg flex justify-start p-2 items-center mb-2 cursor-grab">
         <p className="flex-grow">Task</p>
 
         {/* ICON OPTIONS TASK */}

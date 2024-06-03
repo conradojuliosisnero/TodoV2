@@ -18,6 +18,7 @@ export default function App() {
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Tasks", path: "/dashboard" },
+    { name: "Settings", path: "/settings" },
     { name: "About", path: "/about" },
   ];
 
@@ -41,7 +42,12 @@ export default function App() {
         </NavbarItem>
         <NavbarItem isActive>
           <Link href="/dashboard" aria-current="page">
-            Tasks
+            Dashboard
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="/settings" aria-current="page">
+            Settings
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -52,7 +58,7 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem className="hidden">
+        <NavbarItem>
           <Link href="/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
