@@ -1,8 +1,13 @@
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = handleSubmit((data) => console.log(data));
+
   return (
     <div className="w-full">
       <div className="mx-auto w-[450px] flex-col items-center  my-3 border-1 border-gray-500 dark:border-white rounded-lg flex justify-center">
@@ -17,21 +22,33 @@ const Login = () => {
         </div>
 
         {/* LOGIN BOX  */}
-        <form className="w-[350px] p-3 ">
+        <form className="w-[350px] p-3 " onSubmit={onSubmit}>
           <div className="w-full flex flex-col justify-center items-center">
             <Input
               className="mb-5"
               type="email"
               variant="underlined"
+              isRequired
               size="sm"
               label="Email"
+              {...register("email", {
+                required: {
+                  value: true,
+                },
+              })}
             />
             <Input
               className="mb-4"
               type="password"
               variant="underlined"
               size="sm"
+              isRequired
               label="Password"
+              {...register("password", {
+                required: {
+                  value: true,
+                },
+              })}
             />
           </div>
 
@@ -40,6 +57,7 @@ const Login = () => {
             <Button
               className="w-full dark:text-black dark:bg-white"
               variant="ghost"
+              type="submit"
             >
               Login
             </Button>

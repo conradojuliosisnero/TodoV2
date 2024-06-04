@@ -16,6 +16,7 @@ import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 import AuthProvider from "./auth/AuthProvider.jsx";
+import Terms from "./pages/Terms/Terms.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Help />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
       },
     ],
   },
