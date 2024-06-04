@@ -17,10 +17,10 @@ const Login = () => {
 
   return (
     <div className="w-full">
-      <div className="mx-auto w-[450px] flex-col items-center  my-3 border-1 border-gray-500 dark:border-white rounded-lg flex justify-center">
+      <div className="mx-auto w-full sm:w-[450px] flex-col items-center  my-3 border-1 border-gray-500 dark:border-white rounded-lg flex justify-center">
         {/* TITTLE LOGIN  */}
         <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold mt-12 text-gray-500 dark:text-white">
+          <h1 className="text-5xl text-center sm:text-start font-bold mt-12 text-gray-500 dark:text-white">
             Welcome Back
           </h1>
           <p className="text-gray-500 dark:text-white mt-4">
@@ -29,7 +29,7 @@ const Login = () => {
         </div>
 
         {/* LOGIN BOX  */}
-        <form className="w-[350px] p-3 " onSubmit={onSubmit}>
+        <form className="w-full sm:w-[350px] p-3 " onSubmit={onSubmit}>
           <div className="w-full flex flex-col justify-center items-center">
             <Input
               className="mb-5"

@@ -8,7 +8,7 @@ export const AuthContext = createContext({
 
 // Componente proveedor que utiliza el estado para controlar la autenticación
 export default function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Inicializamos como falso
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>

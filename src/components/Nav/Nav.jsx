@@ -19,10 +19,10 @@ export default function HeaderNav() {
   const auth = useAuth();
 
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Tasks", path: "/dashboard" , auth: auth.isAuthenticated},
-    { name: "Settings", path: "/settings" , auth: auth.isAuthenticated},
-    { name: "About", path: "/about" },
+    { name: "Home", path: "/",auth: true },
+    { name: "Dashboard", path: "/dashboard", auth: auth.isAuthenticated },
+    { name: "Settings", path: "/settings", auth: auth.isAuthenticated },
+    { name: "About", path: "/about",auth: true },
   ];
 
   return (
@@ -66,18 +66,22 @@ export default function HeaderNav() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Link href="/login">Login</Link>
+          {auth.isAuthenticated ? (
+            ""
+          ) : (
+            <Button as={Link} color="primary" href="/login" variant="flat">
+              Log in
+            </Button>
+          )}
         </NavbarItem>
         <NavbarItem>
-          <Button
-            className="hidden"
-            as={Link}
-            color="warning"
-            href="/register"
-            variant="flat"
-          >
-            Sign Up
-          </Button>
+          {auth.isAuthenticated ? (
+            ""
+          ) : (
+            <Button as={Link} color="secondary" href="/register" variant="flat">
+              Sign Up
+            </Button>
+          )}
         </NavbarItem>
       </NavbarContent>
 
@@ -85,12 +89,12 @@ export default function HeaderNav() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full"
+              className={`w-full ${item.auth ? "" : "hidden"}`}
               color={
                 index === 2
-                  ? "warning"
+                  ? "primary"
                   : index === menuItems.length - 1
-                  ? "danger"
+                  ? "warning"
                   : "foreground"
               }
               href={item.path}
