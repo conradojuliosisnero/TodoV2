@@ -10,16 +10,19 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import ToggleDarkMode from './ToggleDarkMode'
+import ToggleDarkMode from "./ToggleDarkMode";
+import { useAuth } from "../../auth/auth";
 
-export default function App() {
+export default function HeaderNav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  const auth = useAuth();
+
   const menuItems = [
-    { name: "Home", path: "/" },
-    { name: "Tasks", path: "/dashboard" },
-    { name: "Settings", path: "/settings" },
-    { name: "About", path: "/about" },
+    { name: "Home", path: "/",auth: true },
+    { name: "Dashboard", path: "/dashboard", auth: auth.isAuthenticated },
+    { name: "Settings", path: "/settings", auth: auth.isAuthenticated },
+    { name: "About", path: "/about",auth: true },
   ];
 
   return (
@@ -41,14 +44,18 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/dashboard" aria-current="page">
-            Dashboard
-          </Link>
+          {auth.isAuthenticated && (
+            <Link href="/dashboard" aria-current="page">
+              Dashboard
+            </Link>
+          )}
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/settings" aria-current="page">
-            Settings
-          </Link>
+          {auth.isAuthenticated && (
+            <Link href="/settings" aria-current="page">
+              Settings
+            </Link>
+          )}
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/about">
@@ -59,18 +66,22 @@ export default function App() {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <Link href="/login">Login</Link>
+          {auth.isAuthenticated ? (
+            ""
+          ) : (
+            <Button as={Link} color="primary" href="/login" variant="flat">
+              Log in
+            </Button>
+          )}
         </NavbarItem>
         <NavbarItem>
-          <Button
-            className="hidden"
-            as={Link}
-            color="warning"
-            href="/register"
-            variant="flat"
-          >
-            Sign Up
-          </Button>
+          {auth.isAuthenticated ? (
+            ""
+          ) : (
+            <Button as={Link} color="secondary" href="/register" variant="flat">
+              Sign Up
+            </Button>
+          )}
         </NavbarItem>
       </NavbarContent>
 
@@ -78,12 +89,12 @@ export default function App() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              className="w-full"
+              className={`w-full ${item.auth ? "" : "hidden"}`}
               color={
                 index === 2
-                  ? "warning"
+                  ? "primary"
                   : index === menuItems.length - 1
-                  ? "danger"
+                  ? "warning"
                   : "foreground"
               }
               href={item.path}

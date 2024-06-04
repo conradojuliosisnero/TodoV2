@@ -52,18 +52,38 @@ const router = createBrowserRouter([
   },
   {
     path: "/settings",
-    element: <SettingLayout />,
+    element: <ProtectedRoute />,
     children: [
       {
-        path: "/settings",
-        element: <InfoConfig />,
-      },
-      {
-        path: "/settings/theme",
-        element: <ThemeConfig />,
+        path: "",
+        element: <SettingLayout />,
+        children: [
+          {
+            path: "",
+            element: <InfoConfig />,
+          },
+          {
+            path: "theme",
+            element: <ThemeConfig />,
+          },
+        ],
       },
     ],
   },
+  // {
+  //   path: "/settings",
+  //   element: <SettingLayout />,
+  //   children: [
+  //     {
+  //       path: "/settings",
+  //       element: <InfoConfig />,
+  //     },
+  //     {
+  //       path: "/settings/theme",
+  //       element: <ThemeConfig />,
+  //     },
+  //   ],
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

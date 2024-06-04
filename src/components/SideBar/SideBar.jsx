@@ -7,7 +7,7 @@ export default function SideBar() {
       <nav className="z-20 flex shrink-0 grow-0 justify-around gap-4 border-t border-gray-200 bg-white/50 p-2.5 shadow-lg backdrop-blur-lg dark:border-slate-600/60 dark:bg-slate-800/50 fixed top-2/4 -translate-y-2/4 left-6 min-h-[auto] min-w-[64px] flex-col rounded-lg border">
         <Link
           to={"/settings"}
-          className="flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-slate-800"
+          className="flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-gray-700 hover:bg-gray-300 dark:text-gray-400 dark:hover:bg-slate-800"
         >
           {/* <!-- HeroIcon - Cog-6-tooth --> */}
           <svg
@@ -31,12 +31,10 @@ export default function SideBar() {
 
           <small className="text-center text-xs font-medium"> Settings </small>
         </Link>
-
         <hr className="dark:border-gray-700/60" />
-
         <Link
           to={"/"}
-          className="flex h-16 w-16 flex-col items-center justify-center gap-1 text-fuchsia-900 dark:text-gray-400"
+          className="flex h-16 w-16 flex-col items-center hover:bg-gray-300 rounded-md justify-center gap-1 text-fuchsia-900 dark:text-gray-400"
         >
           {/* <!-- HeroIcon - Home Modern --> */}
           <svg
@@ -56,7 +54,30 @@ export default function SideBar() {
           </small>
         </Link>
 
-        <DarkModeToggle />
+        <hr className="dark:border-gray-700/60" />
+
+        <Link
+          to={"/"}
+          className="flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-gray-700 hover:bg-gray-300 dark:text-gray-400 dark:hover:bg-slate-800"
+        >
+          {/* <!-- LogOutIcon - Cog-6-tooth --> */}
+          <svg
+            className="stroke-gray-500 dark:stroke-gray-400 h-7 w-7 "
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M16 17L21 12M21 12L16 7M21 12H9M9 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H9"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+
+          <small className="text-center text-xs font-medium"> Log Out </small>
+        </Link>
+
+        {/* <DarkModeToggle /> */}
       </nav>
     </div>
   );
