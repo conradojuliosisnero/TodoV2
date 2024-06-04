@@ -2,9 +2,10 @@ import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import { Checkbox } from "@nextui-org/checkbox";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { CalendarDate } from "@internationalized/date";
 import { DateInput } from "@nextui-org/react";
+import { useAuth } from "../../auth/auth";
 
 const Login = () => {
   const {
@@ -13,6 +14,12 @@ const Login = () => {
     formState: { errors },
     watch
   } = useForm();
+
+  const auth = useAuth()
+
+  if (auth.isAuthenticated) {
+    return <Navigate to='/dashboard'/>
+  }
 
   const onSubmit = handleSubmit((data) => console.log(data));
 

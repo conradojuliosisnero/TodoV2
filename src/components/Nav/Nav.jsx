@@ -10,15 +10,18 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import ToggleDarkMode from './ToggleDarkMode'
+import ToggleDarkMode from "./ToggleDarkMode";
+import { useAuth } from "../../auth/auth";
 
-export default function App() {
+export default function HeaderNav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const auth = useAuth();
 
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Tasks", path: "/dashboard" },
-    { name: "Settings", path: "/settings" },
+    { name: "Tasks", path: "/dashboard" , auth: auth.isAuthenticated},
+    { name: "Settings", path: "/settings" , auth: auth.isAuthenticated},
     { name: "About", path: "/about" },
   ];
 
@@ -41,14 +44,18 @@ export default function App() {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/dashboard" aria-current="page">
-            Dashboard
-          </Link>
+          {auth.isAuthenticated && (
+            <Link href="/dashboard" aria-current="page">
+              Dashboard
+            </Link>
+          )}
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="/settings" aria-current="page">
-            Settings
-          </Link>
+          {auth.isAuthenticated && (
+            <Link href="/settings" aria-current="page">
+              Settings
+            </Link>
+          )}
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/about">

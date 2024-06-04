@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import { useState, createContext } from "react";
 
 // Creamos el contexto de autenticación
 export const AuthContext = createContext({
@@ -8,7 +8,7 @@ export const AuthContext = createContext({
 
 // Componente proveedor que utiliza el estado para controlar la autenticación
 export default function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Inicializamos como falso
+  const [isAuthenticated, setIsAuthenticated] = useState(true); // Inicializamos como falso
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>

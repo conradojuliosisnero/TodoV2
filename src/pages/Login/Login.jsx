@@ -1,10 +1,17 @@
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../../auth/auth";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
+
+  const auth = useAuth()
+
+  if (auth.isAuthenticated) {
+    return <Navigate to='/dashboard'/>
+  }
 
   const onSubmit = handleSubmit((data) => console.log(data));
 

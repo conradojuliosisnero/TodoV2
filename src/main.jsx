@@ -52,6 +52,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/settings",
+    element: <ProtectedRoute />,
+    children: [{ path: "/settings", element: <SettingLayout /> }],
+  },
+  {
+    path: "/settings",
     element: <SettingLayout />,
     children: [
       {
