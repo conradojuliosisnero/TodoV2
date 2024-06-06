@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Task from "../Task/Task";
 import {
   Dropdown,
   DropdownTrigger,
@@ -7,31 +6,59 @@ import {
   DropdownItem,
   Button,
 } from "@nextui-org/react";
+import { TASK } from "../../../data/wrapperTask";
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+  arrayMove,
+} from "@dnd-kit/sortable";
+import Task from "../Task/Task";
 
+function Wrapper({ wrapper, task, set }) {
 
-function Wrapper({ wrapper }) {
+  function handlerDrag(event) {
+    const { active, over } = event;
+    if (!active || !over) {
+      return;
+    }
+    set((task) => {
+      const oldIndex = task.findIndex((task) => task.id === active.id);
+      const newIndex = task.findIndex((task) => task.id === over.id);
+      return arrayMove(task, oldIndex, newIndex);
+    });
+  }
+
   return (
     <div
-      className={`relative bg-white text-gray-600 border-2 dark:border-slate-800 dark:bg-gray-700 dark:text-white p-4 flex flex-col items-center w-full rounded-lg mb-3`}
+      className={`relative bg-white text-gray-600 border-2 dark:border-slate-800 dark:bg-gray-700 dark:text-white p-4 flex flex-col items-center w-full rounded-lg mb-3 h-[400px]`}
     >
       {/* TITLE WRAPPER  */}
       <div className="flex w-full place-content-start place-items-center">
-        <div
-          className={`w-5 h-5 rounded-full border-2 ${wrapper.borderColor}`}
-        ></div>
+        <div className={`w-5 h-5 rounded-full border-2 ${wrapper.color}`}></div>
         <span className={` relative font-semibold text-lg rounded-md px-1 m-1`}>
           {wrapper.name}
         </span>
       </div>
+
       {/* TASK VIEWS  */}
-      <Task />
+      <DndContext collisionDetection={closestCenter} onDragEnd={handlerDrag}>
+        <ul className="overflow-y-scroll overflow-auto dark:custom-scroll dark:bg-transparent gap-4 p-4 mt-2 w-full mb-4">
+          <SortableContext items={TASK} strategy={verticalListSortingStrategy}>
+            {task?.map((t, index) => (
+                  <Task task={t} key={index} />
+                ))}
+          </SortableContext>
+        </ul>
+      </DndContext>
+
       {/* ADD ITEMS  */}
       <div className="flex py-2 place-content-start w-full h-8 left-2 bottom-2 place-items-center">
         {/* ADD ICONS */}
 
-        <Dropdown className="bg-slate-700 w-full">
+        <Dropdown className="dark:bg-slate-700 w-full">
           <DropdownTrigger>
-            <Button variant="ligth" className='w-full flex justify-start'>
+            <Button variant="ligth" className="w-full flex justify-start">
               <svg
                 className="w-[40px] h-[40px] stroke-slate-500 dark:stroke-slate-400"
                 viewBox="0 0 24 24"
@@ -69,9 +96,7 @@ function Wrapper({ wrapper }) {
             </Button>
           </DropdownTrigger>
           <DropdownMenu aria-label="Static Actions">
-            <DropdownItem key="new" className="">
-              Add Task
-            </DropdownItem>
+            <DropdownItem key="new">Add Task</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>
@@ -81,13 +106,16 @@ function Wrapper({ wrapper }) {
 
 Wrapper.propTypes = {
   wrapper: PropTypes.shape({
-    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    bg: PropTypes.string.isRequired,
-    darkMode: PropTypes.string.isRequired,
-    textColor: PropTypes.string.isRequired,
-    borderColor: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
   }).isRequired,
+  task: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  setTask: PropTypes.func.isRequired,
 };
 
 export default Wrapper;

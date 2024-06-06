@@ -77,7 +77,7 @@ export default function SideBar() {
           <small className="text-center text-xs font-medium"> Log Out </small>
         </Link>
 
-        {/* <DarkModeToggle /> */}
+        <DarkModeToggle />
       </nav>
     </div>
   );
