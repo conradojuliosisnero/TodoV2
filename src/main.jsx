@@ -17,6 +17,8 @@ import Register from "./pages/Register/Register.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 import AuthProvider from "./auth/AuthProvider.jsx";
 import Terms from "./pages/Terms/Terms.jsx";
+import { Provider } from "react-redux";
+import { store } from "./store/store.js";
 
 const router = createBrowserRouter([
   {
@@ -88,10 +90,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <NextUIProvider>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </NextUIProvider>
+    <Provider store={store}>
+      <NextUIProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </NextUIProvider>
+    </Provider>
   </React.StrictMode>
 );
