@@ -28,13 +28,13 @@ export default function Todo() {
           <Wrapper
             wrapper={{ name: "New", color: "border-green-500" }}
             task={task}
-            set={() => {}}
+            set={setTask}
           />
           {/* PROGRESS TASK  */}
           <Wrapper
             wrapper={{ name: "Progress", color: "border-orange-500" }}
             task={[]}
-            set={() => {}}
+            set={()=>{}}
           />
           {/* DONE TASK  */}
           <Wrapper

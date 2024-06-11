@@ -19,13 +19,11 @@ function Wrapper({ wrapper, task, set }) {
 
   function handlerDrag(event) {
     const { active, over } = event;
-    if (!active || !over) {
-      return;
-    }
     set((task) => {
       const oldIndex = task.findIndex((task) => task.id === active.id);
       const newIndex = task.findIndex((task) => task.id === over.id);
-      return arrayMove(task, oldIndex, newIndex);
+      const newArray = arrayMove(task, oldIndex, newIndex);
+      return newArray
     });
   }
 
@@ -43,7 +41,7 @@ function Wrapper({ wrapper, task, set }) {
 
       {/* TASK VIEWS  */}
       <DndContext collisionDetection={closestCenter} onDragEnd={handlerDrag}>
-        <ul className="overflow-y-scroll overflow-auto dark:custom-scroll dark:bg-transparent gap-4 p-4 mt-2 w-full mb-4">
+        <ul className="dark:custom-scroll dark:bg-transparent gap-4 p-4 mt-2 w-full mb-4">
           <SortableContext items={TASK} strategy={verticalListSortingStrategy}>
             {task?.map((t, index) => (
                   <Task task={t} key={index} />
@@ -115,7 +113,7 @@ Wrapper.propTypes = {
       content: PropTypes.string.isRequired,
     })
   ).isRequired,
-  setTask: PropTypes.func.isRequired,
+  set: PropTypes.func.isRequired,
 };
 
 export default Wrapper;

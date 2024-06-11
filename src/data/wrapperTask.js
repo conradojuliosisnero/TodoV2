@@ -24,9 +24,9 @@ export const WRAPPER = [
 ];
 
 export const TASK = [
-  { id: 1, name: "Tarea 1" },
-  { id: 2, name: "Tarea 2" },
-  { id: 3, name: "Tarea 3" },
-  { id: 4, name: "Tarea 4" },
-  { id: 5, name: "Tarea 5" },
+  { id: 1, name: "Tarea 1",list:1 },
+  { id: 2, name: "Tarea 2",list:1 },
+  { id: 3, name: "Tarea 3",list:1 },
+  { id: 4, name: "Tarea 4",list:1 },
+  { id: 5, name: "Tarea 5",list:1 },
 ];
