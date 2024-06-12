@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { addTag,deleteTag } from "../../../Features/tagsSlice";
 
 export default function DropDown() {
+
+  const tag = useSelector((state)=>state.addTag)
+  const dispatch = useDispatch()
+
   const [filterTag, setFilterTag] = useState([]);
 
   const handlerTag = (e) => {
